@@ -32,10 +32,7 @@ Se audita el entorno local, VirtualBox y Vagrant, el archivo `Vagrantfile`, las 
 - Funcionamiento verificado en navegador (ver imagen `/evidencias/despliegue_wordpress.png`).
 
 ## 5. CONCLUSIONES
-- ✅ El entorno fue desplegado correctamente con Vagrant y Chef.
-- ✅ Se cumplió con el principio de infraestructura como código.
-- ✅ WordPress funciona y es accesible desde navegador.
-- ✅ Las evidencias respaldan cada paso de auditoría.
+
 
 ## 6. RECOMENDACIONES
 - Implementar pruebas automáticas post-despliegue para verificar estado de servicios.
