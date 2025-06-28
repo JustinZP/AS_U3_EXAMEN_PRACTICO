@@ -31,12 +31,12 @@ La auditoría contempla:
 ## 4. TECNOLOGÍAS UTILIZADAS
 
 | Tecnología      | Versión             | Función                                         |
-|----------------|--------------------|--------------------------------------------------|
-| Vagrant        | 2.3.7 o superior   | Provisión y control de máquinas virtuales       |
-| VirtualBox     | 7.0 o superior     | Entorno de virtualización de VMs                 |
-| Chef           | 17.x               | Herramienta de automatización de recetas         |
-| Ruby           | 2.5 o superior     | Requisito de ejecución de Vagrant y Chef         |
-| Sistema base   | Ubuntu 20.04 / CentOS 8 | Sistema operativo de las VMs            |
+|----------------|---------------------|--------------------------------------------------|
+| Vagrant        | 2.3.7 o superior     | Provisión y control de máquinas virtuales       |
+| VirtualBox     | 7.0 o superior       | Entorno de virtualización de VMs                |
+| Chef           | 17.x                | Herramienta de automatización de recetas        |
+| Ruby           | 2.5 o superior       | Requisito de ejecución de Vagrant y Chef        |
+| Sistema base   | Ubuntu 20.04 / CentOS 8 | Sistema operativo de las VMs               |
 
 ---
 
@@ -51,7 +51,8 @@ Se desplegaron 3 máquinas virtuales:
 
 Se verificó que están corriendo mediante `vagrant status`.
 
-📎 Ver evidencia: `evidencias/vm_virtualbox.png` y `evidencias/vagrant_status_terminal.png`
+![VM VirtualBox](evidencias/vm_virtualbox.png)  
+![Vagrant Status](evidencias/vagrant_status_terminal.png)
 
 ---
 
@@ -61,7 +62,9 @@ Se verificó que están corriendo mediante `vagrant status`.
 - Se especifica el uso de provisioners Chef solo en las máquinas correspondientes.
 - Las recetas están claramente organizadas.
 
-📎 Ver fragmento: `evidencias/fragmentos_codigo.png`
+![Fragmento database](evidencias/fragmentos_codigo_database.png)  
+![Fragmento proxy](evidencias/fragmentos_codigo_proxy.png)  
+![Fragmento wordpress](evidencias/fragmentos_codigo_wordpress.png)
 
 ---
 
@@ -71,15 +74,9 @@ Se verificó que están corriendo mediante `vagrant status`.
 - Se observó la ejecución de `service[nginx] restart`, indicando aplicación exitosa de configuración.
 - No se detectaron errores en el log de la consola.
 
-Primero se ejecutaron estos comandos:
-- 📎 `evidencias/Ejecución de recetas Chef_2.png`
-
-Luego, el tercer comando mostró un error:
-- 📎 `evidencias/Ejecución de recetas Chef_3.png`
-
-Se solucionó quitando una "s" y volviendo a ejecutar `vagrant up`.
-
-📎 Ver evidencia: `evidencias/Ejecución de recetas Chef.png`
+![Receta 1](evidencias/Ejecución%20de%20recetas%20Chef.png)  
+![Receta 2](evidencias/Ejecución%20de%20recetas%20Chef_2.png)  
+![Receta 3 - error corregido](evidencias/Ejecución%20de%20recetas%20Chef_3.png)
 
 ---
 
@@ -88,7 +85,7 @@ Se solucionó quitando una "s" y volviendo a ejecutar `vagrant up`.
 - WordPress es accesible desde [http://192.168.56.2/](http://192.168.56.2/) en el navegador.
 - La interfaz de instalación se presenta correctamente.
 
-📎 Ver evidencia: `evidencias/despliegue_wordpress.png`
+![WordPress funcionando](evidencias/despliegue_wordpress.png)
 
 ---
 
@@ -112,16 +109,16 @@ Se solucionó quitando una "s" y volviendo a ejecutar `vagrant up`.
 
 ## 8. EVIDENCIAS Y ANEXOS
 
-| Anexo  | Descripción                                                                 |
-|--------|-----------------------------------------------------------------------------|
-| 1      | Acceso a WordPress desde navegador – `despliegue_wordpress.png`           |
+| Anexo  | Descripción                                                              |
+|--------|--------------------------------------------------------------------------|
+| 1      | Acceso a WordPress desde navegador – `despliegue_wordpress.png`         |
 | 2      | Ejecución de recetas Chef – `Ejecución de recetas Chef.png`             |
-| 3      | Logs adicionales de Chef – `Ejecución de recetas Chef_2.png`             |
+| 3      | Logs adicionales de Chef – `Ejecución de recetas Chef_2.png`            |
 | 4      | Reinicio de NGINX por Chef – `Ejecución de recetas Chef_3.png`          |
-| 5      | Fragmento Vagrantfile database – `fragmentos_codigo_database.png`         |
-| 6      | Fragmento Vagrantfile proxy – `fragmentos_codigo_proxy.png`              |
-| 7      | Fragmento Vagrantfile wordpress – `fragmentos_codigo_wordpress.png`       |
-| 8      | Estado de VMs en terminal – `vagrant_status_terminal.png`                |
+| 5      | Fragmento Vagrantfile database – `fragmentos_codigo_database.png`       |
+| 6      | Fragmento Vagrantfile proxy – `fragmentos_codigo_proxy.png`             |
+| 7      | Fragmento Vagrantfile wordpress – `fragmentos_codigo_wordpress.png`     |
+| 8      | Estado de VMs en terminal – `vagrant_status_terminal.png`               |
 | 9      | Visualización VMs en VirtualBox – `vm_virtualbox.png`                   |
 
 ---
